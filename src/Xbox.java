@@ -51,7 +51,7 @@ class Xbox extends Game {
 
     boolean searchInStock(int n, String purpose) {
         boolean flag = false;
-        File f = new File("games.txt");
+        File f = new File("Xboxs.txt");
         File inputFile = new File("Xboxs.txt");
         File tempFile = new File("tempo_Stock.txt");
         try {

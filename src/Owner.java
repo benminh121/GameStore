@@ -8,7 +8,7 @@ class Owner {
     Owner(String ch,char platform,int gameID, String title, double price, String description, String video, 
     String cover, String image1, String condition, double discount)
     {
-        if(ch=="add")
+        if(ch.equals("add"))
         {
             if (platform=='P')
             {
@@ -26,7 +26,7 @@ class Owner {
                 obj.add();
             }
         }
-        if(ch == "remove")
+        if(ch.equals("remove"))
         {
             Scanner sc=new Scanner(System.in);
             if(platform == 'P')

@@ -24,7 +24,7 @@ class PS extends Game {
 
         try {
             boolean find = searchInStock(getGameID(), "add");
-            if (find == false) {
+            if (!find) {
                 FileWriter fw = new FileWriter(f, true);
                 String temp = getGameID() + " " + getTitle() + " " + getPrice() + " " + getDescription() + " "
                         + getVideo() + " " + getCover() + " " + getImage1()
@@ -46,7 +46,7 @@ class PS extends Game {
         // File rr = new File("rrrr.txt");
 
         boolean find = searchInStock(n, "remove");
-        if (find == false) {
+        if (!find) {
             System.out.println("Not Available!!");
         }
 

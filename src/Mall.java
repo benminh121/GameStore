@@ -1,7 +1,6 @@
 import java.util.*;
 import java.io.*;
-import java.io.Console;
-
+import java.util.ArrayList;
 public class Mall implements Runnable {
 
     synchronized public void run() {
@@ -26,12 +25,12 @@ public class Mall implements Runnable {
                         Owner obj1;
                         // Admin can add or remove game in store
                         System.out.println("Do you Want to Add or Remove");
-                        String ch = sc.next();
-                        if (ch.equals("Add")) {
+                        String ch = sc.next().toUpperCase();
+                        if (ch.equals("ADD")) {
                             // Add item - admin must enter all information of game DVD
                             System.out.println("Fill game details below:");
                             // Choose platform
-                            System.out.println("Enter platform :\nP - Playstaion \nX - Xbox \nN - Nintendo Switch");
+                            System.out.println("Enter platform :\nP - PlayStation \nX - Xbox \nN - Nintendo Switch");
                             char platform = sc.next().charAt(0);
                             // Enter game id
                             System.out.println("Enter game id");
@@ -64,7 +63,7 @@ public class Mall implements Runnable {
                             obj1 = new Owner("add", platform, gameID, title, price, description, video, cover,
                                                 image1, condition, discount);
                         // Constructor remove game
-                        } else if (ch.equals("Remove")) {
+                        } else if (ch.equals("REMOVE")) {
                             System.out.print("Enter platform P X N: ");
                             char platform=sc.next().charAt(0);
                             obj1 = new Owner("remove", platform, 21, "title", 4.3, "description", "video", "cover",
@@ -91,37 +90,28 @@ public class Mall implements Runnable {
 
     boolean checkAdmin() {
 
-        File f = new File("admin.txt");
+        File f = new File("admin.csv");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter id: ");
         String id = sc.next();
-        // System.out.println("Enter Password");
-        // String password=sc.next();
-
-        // try{
-        // FileWriter fw =new FileWriter(f);
-        // String str="UserID Pass@##"; //Admin id and password
-        // fw.write(str);
-        // fw.close();
-        // }
-        // catch(Exception e)
-        // {
-        // System.out.println("Error "+e);
-        // }
         try {
-            File inputFile = new File("admin.txt");
-            Scanner reader = new Scanner(inputFile);
-            String str = reader.nextLine();
-            // BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            // String str = reader.readLine();
-            // In file admin.txt has {id pass}
-            str.trim();
-            int firstgap = str.indexOf(" ");
-            if (id.equals(str.substring(0, firstgap))) {
+            /*File inputFile = new File("admin.csv");
+            Scanner reader = new Scanner(inputFile);*/
+            BufferedReader br = new BufferedReader(new FileReader("admin.csv"));
+            String line = "";
+            String username = null;
+            String passwd = null;
+            while ((line = br.readLine()) != null)   //returns a Boolean value
+            {
+                String[] record = line.split(",");    // use comma as separator
+                username = record[0];
+                passwd = record[1];
+            }
+            if (id.equals(username)){
+                return new Mall().password(passwd);
+            }
+            else return false;
 
-                return new Mall().password(str.substring(firstgap + 1));
-            } else
-                return false;
         } catch (IOException e) {
             System.out.println("Errrr");
         }
@@ -150,6 +140,16 @@ public class Mall implements Runnable {
         System.out.print("Enter Password: ");
         String passwordA = scanner.nextLine();
         return passwordA.equals(pass);
+    }
+    private List<String> getRecordFromLine(String line) {
+        List<String> values = new ArrayList<String>();
+        try (Scanner rowScanner = new Scanner(line)) {
+            rowScanner.useDelimiter(",");
+            while (rowScanner.hasNext()) {
+                values.add(rowScanner.next());
+            }
+        }
+        return values;
     }
 
     }
