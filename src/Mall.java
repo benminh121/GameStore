@@ -106,11 +106,12 @@ public class Mall implements Runnable {
                 String[] record = line.split(",");    // use comma as separator
                 username = record[0];
                 passwd = record[1];
+                if (id.equals(username)){
+                    return new Mall().password(passwd);
+                }
             }
-            if (id.equals(username)){
-                return new Mall().password(passwd);
-            }
-            else return false;
+            return false;
+
 
         } catch (IOException e) {
             System.out.println("Errrr");
