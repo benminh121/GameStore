@@ -1,6 +1,6 @@
-
 import java.util.*;
 import java.io.*;
+import java.io.Console;
 
 public class Mall implements Runnable {
 
@@ -86,12 +86,12 @@ public class Mall implements Runnable {
             obj.displayBill();
         }
         System.out.println("Thank You , Visit Again");
-        sc.close();
+
     }
 
     boolean checkAdmin() {
 
-        File f = new File("src/admin.txt");
+        File f = new File("admin.txt");
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter id: ");
         String id = sc.next();
@@ -109,10 +109,12 @@ public class Mall implements Runnable {
         // System.out.println("Error "+e);
         // }
         try {
-            File inputFile = new File("src/admin.txt");
-            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-            String str = reader.readLine();
-            // In file admin.txt has format {id pass}
+            File inputFile = new File("admin.txt");
+            Scanner reader = new Scanner(inputFile);
+            String str = reader.nextLine();
+            // BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+            // String str = reader.readLine();
+            // In file admin.txt has {id pass}
             str.trim();
             int firstgap = str.indexOf(" ");
             if (id.equals(str.substring(0, firstgap))) {
@@ -127,7 +129,7 @@ public class Mall implements Runnable {
 
     }
 
-    public boolean password(String pass) {
+    /*public boolean password(String pass) {
         Console console = System.console();
         if (console == null) {
             System.out.println("Couldn't get Console instance");
@@ -141,7 +143,14 @@ public class Mall implements Runnable {
             return true;
         else
             return false;
+    }*/
+    // Because IDE run console always null, we cannot run with console.readPassword
+    public boolean password(String pass){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Password: ");
+        String passwordA = scanner.nextLine();
+        return passwordA.equals(pass);
+    }
 
     }
 
-}
