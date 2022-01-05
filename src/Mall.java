@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Mall implements Runnable {
 
     synchronized public void run() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in).useDelimiter("\n");
         System.out.println(" \t\t\t################# Welcome to Smart Store #################");
         System.out.print("Are you a customer YES/NO: ");
         String cus = sc.next();
@@ -16,7 +16,7 @@ public class Mall implements Runnable {
                     // Choose platform
                     System.out.print("Choose platform game: ");
                     System.out.println("\nP for PS\tX for Xbox\tN for Nintendo Switch");
-                    String pf = sc.next();
+                    String pf = sc.next().toUpperCase();
                     obj.show(pf);
                     break;
                 case "NO":
@@ -24,7 +24,7 @@ public class Mall implements Runnable {
                     if (isAdmin) {
                         Owner obj1;
                         // Admin can add or remove game in store
-                        System.out.println("Do you Want to Add or Remove");
+                        System.out.print("Do you Want to Add or Remove: ");
                         String ch = sc.next().toUpperCase();
                         if (ch.equals("ADD")) {
                             // Add item - admin must enter all information of game DVD
@@ -64,8 +64,8 @@ public class Mall implements Runnable {
                                                 image1, condition, discount);
                         // Constructor remove game
                         } else if (ch.equals("REMOVE")) {
-                            System.out.print("Enter platform P X N: ");
-                            char platform=sc.next().charAt(0);
+                            System.out.print("Enter platform P,X,N: ");
+                            char platform=sc.next().toUpperCase().charAt(0);
                             obj1 = new Owner("remove", platform, 21, "title", 4.3, "description", "video", "cover",
                             "image1", "condition", 2.3); // We enter random to skip constructor
                         }
@@ -80,7 +80,7 @@ public class Mall implements Runnable {
             if (sc.next().toUpperCase().equals("YES"))
                 break;
         }
-        if (cus.equals("YES")) {
+        if (cus.toUpperCase().equals("YES")) {
             Bill obj = new Bill();
             obj.displayBill();
         }

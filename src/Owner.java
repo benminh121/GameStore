@@ -31,9 +31,9 @@ class Owner {
             Scanner sc=new Scanner(System.in);
             if(platform == 'P')
             {
-                System.out.println("Enter the game id");
+                System.out.print("Enter the game id: ");
                 int n=sc.nextInt();
-                PS obj = new PS(gameID);
+                PS obj = new PS(n);
                 obj.remove(n);
             }
             else if(platform== 'X')

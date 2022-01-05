@@ -18,7 +18,7 @@ class Bill extends Game {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your Name: ");
         username = sc.nextLine();
-        System.out.println("Your Phone Number");
+        System.out.print("Your Phone Number: ");
         usercontact = sc.next();
         System.out.println("\n\nDear " + username + ",");
         System.out.println(usercontact);
@@ -65,6 +65,7 @@ class Bill extends Game {
         }
         System.out.println("");
         lineadder();
+
         for (int counter = 0; counter < bill.size(); counter++) {
             double price = 0;
             int i = 0;

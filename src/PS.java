@@ -15,7 +15,7 @@ class PS extends Game {
     }
 
     PS(int gameID){
-        super();
+        super(gameID);
     }
 
     void add() {
@@ -75,7 +75,7 @@ class PS extends Game {
                     int val = Integer.parseInt(trimmedLine.substring(index + 1));
                     if (purpose.equals("add"))
                         val++;
-                    else {
+                    else if (purpose.equals("remove")) {
                         if (val == 0)
                             System.out.println("Not enough in Stock !!,Sorry");
                         else {

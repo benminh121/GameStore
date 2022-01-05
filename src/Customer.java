@@ -30,11 +30,23 @@ class Customer {
                 temp = temp.substring(temp.indexOf(" ") + 1);
                 System.out.println("Price: " + temp.substring(i, temp.indexOf(" ")));
                 temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Description: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Video: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Cover: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Image: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Condition: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
                 System.out.println("Discount: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(" ") + 1);
+                System.out.println("Stock: " + temp.substring(i, temp.indexOf(" ")));
                 System.out.println("*************************");
             }
 
-            sc.close();
+
         }
 
         catch (IOException e) {
@@ -42,23 +54,25 @@ class Customer {
         }
         Scanner sc = new Scanner(System.in);
         System.out.println("Do you want to buy any ? YES/NO");
-        if (sc.next().equals("YES")) {
+        if (sc.next().toUpperCase().equals("YES")) {
             System.out.println("Enter the game id");
             int gid = sc.nextInt();
             select(gid, platform);
         }
-        sc.close();
+
 
     }
 
     static void select(int gid, String platform) {
-        if (platform.equalsIgnoreCase("PS")) {
-            PS obj = new PS();
+        if (platform.equalsIgnoreCase("P")) {
+            PS obj = new PS(gid);
             obj.remove(gid);
-        } else if (platform.equalsIgnoreCase("Xbox")) {
-            Xbox obj1 = new Xbox();
+        } else if (platform.equalsIgnoreCase("X")) {
+            Xbox obj1 = new Xbox(gid);
+            obj1.remove(gid);
+        } else if (platform.equalsIgnoreCase("N")) {
+            Nintendo obj1 = new Nintendo(gid);
             obj1.remove(gid);
         }
-
     }
 }

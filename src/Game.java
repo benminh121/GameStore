@@ -28,15 +28,15 @@ abstract class Game
     }
     Game(int gameID, String title, double price, String description, String video, 
     String cover, String image1, String condition, double discount){
-        setGameID(gameID);
-        setTitle(title);
-        setPrice(price);
-        setDescription(description);
-        setVideo(video);
-        setCover(cover);
-        setImage1(image1);
-        setCondition(condition); 
-        setDiscountG(discount);   
+        this.setGameID(gameID);
+        this.setTitle(title);
+        this.setPrice(price);
+        this.setDescription(description);
+        this.setVideo(video);
+        this.setCover(cover);
+        this.setImage1(image1);
+        this.setCondition(condition);
+        this.setDiscountG(discount);
     }
     Game(int gameID){
         setGameID(gameID);
