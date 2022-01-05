@@ -32,6 +32,7 @@ public class Mall implements Runnable {
                             // Choose platform
                             System.out.println("Enter platform :\nP - PlayStation \nX - Xbox \nN - Nintendo Switch");
                             char platform = sc.next().charAt(0);
+                            platform = Character.toUpperCase(platform);
                             // Enter game id
                             System.out.println("Enter game id");
                             int gameID = sc.nextInt();
