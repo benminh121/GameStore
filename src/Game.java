@@ -1,4 +1,3 @@
-/** This is an abstract class which can be extended by any product class  */
 import java.util.ArrayList;
 abstract class Game
 {

@@ -143,16 +143,6 @@ public class Mall implements Runnable {
         String passwordA = scanner.nextLine();
         return passwordA.equals(pass);
     }
-    private List<String> getRecordFromLine(String line) {
-        List<String> values = new ArrayList<String>();
-        try (Scanner rowScanner = new Scanner(line)) {
-            rowScanner.useDelimiter(",");
-            while (rowScanner.hasNext()) {
-                values.add(rowScanner.next());
-            }
-        }
-        return values;
-    }
 
     }
 
