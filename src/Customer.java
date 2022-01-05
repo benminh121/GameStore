@@ -28,7 +28,7 @@ class Customer {
                 temp = temp.substring(temp.indexOf(" ") + 1);
                 System.out.println("Title: " + temp.substring(i, temp.indexOf(" ")));
                 temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Price: " + temp.substring(i, temp.indexOf(" ")));
+                System.out.println("Price: " + temp.substring(i, temp.indexOf(" ")) + "000 VND");
                 temp = temp.substring(temp.indexOf(" ") + 1);
                 System.out.println("Description: " + temp.substring(i, temp.indexOf(" ")));
                 temp = temp.substring(temp.indexOf(" ") + 1);

@@ -1,1 +1,1 @@
-2 NBA22 1000 BasketballGame video1 cover1 image1 available 0
+1 NBA22 1200 SoccerGame video1 cover1 image1 available 0.1 4

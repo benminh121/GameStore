@@ -3,6 +3,15 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 
 class Bill extends Game {
+    // Design space
+    public  void linespace(String temp, int i){
+        for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
+            if (k == 20)
+                System.out.print("|");
+            System.out.print(" ");
+        }
+    }
+    // design line ----
     public void lineadder() {
         for (int x = 0; x < 145; x++) {
             System.out.print("-");
@@ -28,6 +37,7 @@ class Bill extends Game {
         System.out.println("BILL");
         System.out.println("");
         lineadder();
+        // Create name of column
         String S = "ID";
         System.out.print(S);
         for (int k = S.length(); k < 30; k++) {
@@ -65,22 +75,23 @@ class Bill extends Game {
         }
         System.out.println("");
         lineadder();
-
+        // print information for each row
         for (int counter = 0; counter < bill.size(); counter++) {
             double price = 0;
             int i = 0;
             String temp = bill.get(counter);
             temp.trim();
             temp = temp + " ";
+            // Print game id
             String gid = temp.substring(i, temp.indexOf(" "));
             System.out.print(gid);
+            // Print game id
             for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
             }
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            // System.out.println("Brand: "+temp.substring(i,temp.indexOf(" ")));
+            // Print name
             temp = temp.substring(temp.indexOf(" ") + 1);
             System.out.print(temp.substring(i, temp.indexOf(" ")));
             for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
@@ -88,6 +99,7 @@ class Bill extends Game {
                     System.out.print("|");
                 System.out.print(" ");
             }
+            // Print price
             temp = temp.substring(temp.indexOf(" ") + 1);
             price = Double.parseDouble(temp.substring(i, temp.indexOf(" ")));
             System.out.print(temp.substring(i, temp.indexOf(" ")));
@@ -96,14 +108,21 @@ class Bill extends Game {
                     System.out.print("|");
                 System.out.print(" ");
             }
+            // print discount
             temp = temp.substring(temp.indexOf(" ") + 1);
-            price = price - (0.01 * Double.parseDouble(temp.substring(i, temp.indexOf(" "))));
+            temp = temp.substring(temp.indexOf(" ") + 1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
+            temp = temp.substring(temp.indexOf(" ") + 1);
+            price = price - (price * Double.parseDouble(temp.substring(i, temp.indexOf(" "))));
             System.out.print(temp.substring(i, temp.indexOf(" ")));
             for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
             }
+            // Cost
             System.out.print(price);
             for (int k = Double.toString(price).length(); k < 30; k++) {
                 if (k == 20)

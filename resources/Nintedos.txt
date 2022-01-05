@@ -1,1 +1,2 @@
-1 Mario 1200 MapGame video1 cover1 image1 available 0.05
+1 Mario 1200 MapGame video1 cover1 image1 available 0.05 3
+2 Ringfit 1200 Sport video1 cover1 image1 available 0.05 2
