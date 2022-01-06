@@ -3,14 +3,6 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 
 class Bill extends Game {
-    // Design space
-    public  void linespace(String temp, int i){
-        for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
-            if (k == 20)
-                System.out.print("|");
-            System.out.print(" ");
-        }
-    }
     // design line ----
     public void lineadder() {
         for (int x = 0; x < 145; x++) {
