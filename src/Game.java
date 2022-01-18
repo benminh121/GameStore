@@ -12,6 +12,7 @@ abstract class Game
     private String image1;
     private String condition;
     private double discount;
+    private int stock;
     Game()
     {
         gameID = 0;
@@ -112,6 +113,14 @@ abstract class Game
     
     public double getDiscountG() {
         return discount;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public int getStock() {
+        return stock;
     }
 
     abstract void add( );
