@@ -20,32 +20,32 @@ public class PS_Interface {
 
             String readLine = null;
 
-            StudentTableModel tableModel = new StudentTableModel();
+            gTableModel tableModel = new gTableModel();
             File file = new File("PSs.txt");
 
             FileReader reader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(reader);
 
-            List<PS> studentList = new ArrayList<PS>();
+            List<PS> gList = new ArrayList<PS>();
             while((readLine = bufReader.readLine()) != null) {
-                String[] splitData = readLine.split(" ");
+                String[] splitData = readLine.split(",");
 
-                PS student = new PS();
-                student.setGameID(Integer.parseInt(splitData[0]));
-                student.setTitle(splitData[1]);
-                student.setPrice(Double.parseDouble(splitData[2]));
-                student.setDescription(splitData[3]);
-                student.setVideo(splitData[4]);
-                student.setCover(splitData[5]);
-                student.setImage1(splitData[6]);
-                student.setCondition(splitData[7]);
-                student.setDiscountG(Double.parseDouble(splitData[8]));
-                student.setStock(Integer.parseInt(splitData[9]));
+                PS g = new PS();
+                g.setGameID(Integer.parseInt(splitData[0]));
+                g.setTitle(splitData[1]);
+                g.setPrice(Double.parseDouble(splitData[2]));
+                g.setDescription(splitData[3]);
+                g.setVideo(splitData[4]);
+                g.setCover(splitData[5]);
+                g.setImage1(splitData[6]);
+                g.setCondition(splitData[7]);
+                g.setDiscountG(Double.parseDouble(splitData[8]));
+                g.setStock(Integer.parseInt(splitData[9]));
 
-                studentList.add(student);
+                gList.add(g);
             }
 
-            tableModel.setList(studentList);
+            tableModel.setList(gList);
             table.setModel(tableModel);
 
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,7 +59,7 @@ public class PS_Interface {
 
 
 
-    class StudentTableModel extends AbstractTableModel {
+    class gTableModel extends AbstractTableModel {
 
         private List<PS> list = new ArrayList<PS>();
         private String[] columnNames = {"ID", "Title","Price","De","Vi","Co","Im","Con","Dis","Stock"};

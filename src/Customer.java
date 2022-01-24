@@ -21,28 +21,28 @@ class Customer {
             while (sc.hasNextLine()) {
                 String temp = sc.nextLine();
                 temp.trim();
-                temp = temp + " ";
+                temp = temp + ",";
 
-                String gid = temp.substring(i, temp.indexOf(" "));
+                String gid = temp.substring(i, temp.indexOf(","));
                 System.out.println("Game id: " + gid);
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Title: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Price: " + temp.substring(i, temp.indexOf(" ")) + "000 VND");
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Description: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Video: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Cover: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Image: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Condition: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Discount: " + temp.substring(i, temp.indexOf(" ")));
-                temp = temp.substring(temp.indexOf(" ") + 1);
-                System.out.println("Stock: " + temp.substring(i, temp.indexOf(" ")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Title: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Price: " + temp.substring(i, temp.indexOf(",")) + "000 VND");
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Description: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Video: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Cover: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Image: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Condition: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Discount: " + temp.substring(i, temp.indexOf(",")));
+                temp = temp.substring(temp.indexOf(",") + 1);
+                System.out.println("Stock: " + temp.substring(i, temp.indexOf(",")));
                 System.out.println("*************************");
             }
 

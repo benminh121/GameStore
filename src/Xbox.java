@@ -26,9 +26,9 @@ class Xbox extends Game {
             boolean find = searchInStock(getGameID(), "add");
             if (find == false) {
                 FileWriter fw = new FileWriter(f, true);
-                String temp = getGameID() + " " + getTitle() + " " + getPrice() + " " + getDescription() + " "
-                        + getVideo() + " " + getCover() + " " + getImage1()
-                        + " " + getCondition() + " " + getDiscountG() + " " + "1" + " "
+                String temp = getGameID() + "," + getTitle() + "," + getPrice() + "," + getDescription() + ","
+                        + getVideo() + "," + getCover() + "," + getImage1()
+                        + "," + getCondition() + "," + getDiscountG() + "," + "1" + ","
                         + System.getProperty("line.separator");
                 fw.write(temp);
                 fw.close();
@@ -61,12 +61,12 @@ class Xbox extends Game {
             String currentLine;
             while ((currentLine = reader.readLine()) != null) {
                 String trimmedLine = currentLine.trim(); // trim newline when comparing with lineToRemove
-                int firstgap = trimmedLine.indexOf(" ");
+                int firstgap = trimmedLine.indexOf(",");
 
                 int pno = Integer.parseInt(trimmedLine.substring(0, firstgap));
 
                 if (pno == n) {
-                    int index = trimmedLine.lastIndexOf(" ");
+                    int index = trimmedLine.lastIndexOf(",");
                     int val = Integer.parseInt(trimmedLine.substring(index + 1));
                     if (purpose.equals("add"))
                         val++;

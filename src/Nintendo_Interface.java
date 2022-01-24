@@ -20,32 +20,32 @@ public class Nintendo_Interface {
 
             String readLine = null;
 
-            StudentTableModel tableModel = new StudentTableModel();
+            gTableModel tableModel = new gTableModel();
             File file = new File("Nintendos.txt");
 
             FileReader reader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(reader);
 
-            List<Nintendo> studentList = new ArrayList<Nintendo>();
+            List<Nintendo> gList = new ArrayList<Nintendo>();
             while((readLine = bufReader.readLine()) != null) {
-                String[] splitData = readLine.split(" ");
+                String[] splitData = readLine.split(",");
 
-                Nintendo student = new Nintendo();
-                student.setGameID(Integer.parseInt(splitData[0]));
-                student.setTitle(splitData[1]);
-                student.setPrice(Double.parseDouble(splitData[2]));
-                student.setDescription(splitData[3]);
-                student.setVideo(splitData[4]);
-                student.setCover(splitData[5]);
-                student.setImage1(splitData[6]);
-                student.setCondition(splitData[7]);
-                student.setDiscountG(Double.parseDouble(splitData[8]));
-                student.setStock(Integer.parseInt(splitData[9]));
+                Nintendo g = new Nintendo();
+                g.setGameID(Integer.parseInt(splitData[0]));
+                g.setTitle(splitData[1]);
+                g.setPrice(Double.parseDouble(splitData[2]));
+                g.setDescription(splitData[3]);
+                g.setVideo(splitData[4]);
+                g.setCover(splitData[5]);
+                g.setImage1(splitData[6]);
+                g.setCondition(splitData[7]);
+                g.setDiscountG(Double.parseDouble(splitData[8]));
+                g.setStock(Integer.parseInt(splitData[9]));
 
-                studentList.add(student);
+                gList.add(g);
             }
 
-            tableModel.setList(studentList);
+            tableModel.setList(gList);
             table.setModel(tableModel);
 
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,7 +59,7 @@ public class Nintendo_Interface {
 
 
 
-    class StudentTableModel extends AbstractTableModel {
+    class gTableModel extends AbstractTableModel {
 
         private List<Nintendo> list = new ArrayList<Nintendo>();
         private String[] columnNames = {"ID", "Title","Price","De","Vi","Co","Im","Con","Dis","Stock"};
