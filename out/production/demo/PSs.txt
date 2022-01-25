@@ -3,4 +3,4 @@
 3,GodOfWar,800,Adventure,video1,cover1,image1,available,0.1,0
 4,Fifa20,1000,SoccerGame,video1,cover1,image1,available,0.1,1 
 5,abc,900.0,BHD,vi,co,im,ava,0.0,0 
-6,a,3.0,e,d,f,g,s,0.0,1
+6,a,3.0,e,d,f,g,s,0.0,0 
