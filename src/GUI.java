@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.*;
 public class GUI extends JFrame
 {
     private static final int FRAME_WIDTH = 250;
@@ -14,7 +13,6 @@ public class GUI extends JFrame
     static JTextField userNameField;
     static JPasswordField passwordField;
     String[] options = new String[] {"Exit","PlayStation", "Xbox", "Nintendo Switch"};
-    String[] columnNames = { "ID", "Title", "Price","Discount"};
     public GUI() throws FileNotFoundException
     {
         createComponents();
@@ -23,7 +21,8 @@ public class GUI extends JFrame
 
     private void createComponents() throws FileNotFoundException
     {
-        ownerField = JOptionPane.showConfirmDialog(null,"Are you owner?\n Click yes to log in","Check Owner", JOptionPane.YES_NO_OPTION);
+        ownerField = JOptionPane.showConfirmDialog(null,"Are you owner?\n " +
+                "Click yes to log in","Check Owner", JOptionPane.YES_NO_OPTION);
         userNameField = new JTextField(10);
         passwordField = new JPasswordField(10);
         JLabel ownerLabel = new JLabel("Owner");
@@ -41,6 +40,7 @@ public class GUI extends JFrame
 
                     public void run() {
                         new PS_Interface().createUI();
+
                     }
                 };
 

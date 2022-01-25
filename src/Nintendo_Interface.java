@@ -14,6 +14,8 @@ public class Nintendo_Interface {
     public void createUI() {
 
         try {
+            JButton buttonBack=new JButton("Back");
+            JButton button=new JButton("Search");
             JFrame frame = new JFrame();
             frame.setLayout(new BorderLayout());
             JTable table = new JTable();
@@ -48,8 +50,13 @@ public class Nintendo_Interface {
             tableModel.setList(gList);
             table.setModel(tableModel);
 
+            frame.setLayout(new BorderLayout());
+            tableModel.setList(gList);
+            table.setModel(tableModel);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.add(new JScrollPane(table));
+            frame.add(button,BorderLayout.SOUTH);
+            frame.add(buttonBack,BorderLayout.BEFORE_FIRST_LINE);
+            frame.add(new JScrollPane(table),BorderLayout.CENTER);
             frame.setTitle("File to JTable");
             frame.pack();
             frame.setVisible(true);

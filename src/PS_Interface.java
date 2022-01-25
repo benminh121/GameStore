@@ -12,12 +12,12 @@ public class PS_Interface {
 
 
     public void createUI() {
-
         try {
             JFrame frame = new JFrame();
             frame.setLayout(new BorderLayout());
             JTable table = new JTable();
-
+            JButton button=new JButton("Search");
+            JButton buttonBack=new JButton("Back");
             String readLine = null;
 
             gTableModel tableModel = new gTableModel();
@@ -28,7 +28,8 @@ public class PS_Interface {
 
             List<PS> gList = new ArrayList<PS>();
             while((readLine = bufReader.readLine()) != null) {
-                String[] splitData = readLine.split(",");
+                String temp = readLine +",";
+                String[] splitData = temp.split(",");
 
                 PS g = new PS();
                 g.setGameID(Integer.parseInt(splitData[0]));
@@ -44,16 +45,17 @@ public class PS_Interface {
 
                 gList.add(g);
             }
-
+            frame.setLayout(new BorderLayout());
             tableModel.setList(gList);
             table.setModel(tableModel);
 
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.add(new JScrollPane(table));
+            frame.add(button,BorderLayout.SOUTH);
+            frame.add(buttonBack,BorderLayout.BEFORE_FIRST_LINE);
+            frame.add(new JScrollPane(table),BorderLayout.CENTER);
             frame.setTitle("File to JTable");
             frame.pack();
             frame.setVisible(true);
-
         } catch(IOException ex) {}
     }
 

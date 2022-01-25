@@ -28,7 +28,7 @@ class Nintendo extends Game {
                 FileWriter fw = new FileWriter(f, true);
                 String temp = getGameID() + "," + getTitle() + "," + getPrice() + "," + getDescription() + ","
                         + getVideo() + "," + getCover() + "," + getImage1()
-                        + "," + getCondition() + "," + getDiscountG() + "," + "1" + " "
+                        + "," + getCondition() + "," + getDiscountG() + "," + "1" + ""
                         + System.getProperty("line.separator");
                 fw.write(temp);
                 fw.close();
