@@ -1,3 +1,4 @@
-1,Fifa22,1000,SoccerGame,video1,cover1,image1,available,0.1,4,
-2,GTAV,900,Action,video1,cover1,image1,available,0.1,0,
-3,GodOfWar,800,Adventure,video1,cover1,image1,available,0.1,0,
+1,Fifa22,1000,SoccerGame,video1,cover1,image1,available,0.1,4
+2,GTAV,900,Action,video1,cover1,image1,available,0.1,0
+3,GodOfWar,800,Adventure,video1,cover1,image1,available,0.1,0
+4,Fifa20,1000,SoccerGame,video1,cover1,image1,available,0.1,2 

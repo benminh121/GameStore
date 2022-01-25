@@ -75,41 +75,41 @@ class Bill extends Game {
             temp.trim();
             temp = temp + " ";
             // Print game id
-            String gid = temp.substring(i, temp.indexOf(" "));
+            String gid = temp.substring(i, temp.indexOf(","));
             System.out.print(gid);
             // Print game id
-            for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
+            for (int k = temp.substring(i, temp.indexOf(",")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
             }
             // Print name
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            System.out.print(temp.substring(i, temp.indexOf(" ")));
-            for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
+            temp = temp.substring(temp.indexOf(",") + 1);
+            System.out.print(temp.substring(i, temp.indexOf(",")));
+            for (int k = temp.substring(i, temp.indexOf(",")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
             }
             // Print price
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            price = Double.parseDouble(temp.substring(i, temp.indexOf(" ")));
-            System.out.print(temp.substring(i, temp.indexOf(" ")));
-            for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
+            temp = temp.substring(temp.indexOf(",") + 1);
+            price = Double.parseDouble(temp.substring(i, temp.indexOf(",")));
+            System.out.print(temp.substring(i, temp.indexOf(",")));
+            for (int k = temp.substring(i, temp.indexOf(",")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
             }
             // print discount
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            temp = temp.substring(temp.indexOf(" ") + 1);
-            price = price - (price * Double.parseDouble(temp.substring(i, temp.indexOf(" "))));
-            System.out.print(temp.substring(i, temp.indexOf(" ")));
-            for (int k = temp.substring(i, temp.indexOf(" ")).length(); k < 30; k++) {
+            temp = temp.substring(temp.indexOf(",") + 1);
+            temp = temp.substring(temp.indexOf(",") + 1);
+            temp = temp.substring(temp.indexOf(",") + 1);
+            temp = temp.substring(temp.indexOf(",") + 1);
+            temp = temp.substring(temp.indexOf(",") + 1);
+            temp = temp.substring(temp.indexOf(",") + 1);
+            price = price - (price * Double.parseDouble(temp.substring(i, temp.indexOf(","))));
+            System.out.print(temp.substring(i, temp.indexOf(",")));
+            for (int k = temp.substring(i, temp.indexOf(",")).length(); k < 30; k++) {
                 if (k == 20)
                     System.out.print("|");
                 System.out.print(" ");
