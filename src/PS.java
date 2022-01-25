@@ -38,6 +38,14 @@ class PS extends Game {
         }
 
     }
+    void update(int n){
+        File inputFile = new File("PSs.txt");
+        File tempFile = new File("myTempFile.txt");
+        boolean find = searchInStock(n, "update");
+        if (!find) {
+            System.out.println("Not Available!!");
+        }
+    }
 
     void remove(int n) {
 
@@ -73,7 +81,7 @@ class PS extends Game {
                 if (pno == n) {
                     int index = trimmedLine.lastIndexOf(",");
                     int val = Integer.parseInt(trimmedLine.substring(index + 1));
-                    if (purpose.equals("add"))
+                    if (purpose.equals("add") || purpose.equals("update"))
                         val++;
                     else if (purpose.equals("remove")) {
                         if (val == 0)
@@ -84,7 +92,7 @@ class PS extends Game {
                             System.out.println("Congrats, transaction successful!!");
                         }
                     }
-                    trimmedLine = trimmedLine.substring(0, index + 1) + Integer.toString(val) + " ";
+                    trimmedLine = trimmedLine.substring(0, index + 1) + val + "";
                     flag = true;
                     writer.write(trimmedLine + System.getProperty("line.separator"));
                     continue;

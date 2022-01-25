@@ -2,4 +2,4 @@
 2,GTAV,900,Action,video1,cover1,image1,available,0.1,0
 3,GodOfWar,800,Adventure,video1,cover1,image1,available,0.1,0
 4,Fifa20,1000,SoccerGame,video1,cover1,image1,available,0.1,1
-5,sd,43.0,fs,fs,rs,rg,gf,0.0,0
+5,PES,500.0,Soccer,vi1,co1,im1,available,0.03,1

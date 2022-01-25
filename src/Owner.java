@@ -50,7 +50,31 @@ class Owner {
                 Nintendo obj = new Nintendo(gameID);
                 obj.remove(n);
             }
-
+        }
+        else if(ch.equals("update"))
+        {
+            Scanner sc=new Scanner(System.in);
+            if(platform == 'P')
+            {
+                System.out.print("Enter the game id: ");
+                int n=sc.nextInt();
+                PS obj = new PS(n);
+                obj.update(n);
+            }
+            else if(platform== 'X')
+            {
+                System.out.println("Enter the game id");
+                int n=sc.nextInt();
+                Xbox obj = new Xbox(gameID);
+                obj.update(n);
+            }
+            else if(platform== 'N')
+            {
+                System.out.println("Enter the game id");
+                int n=sc.nextInt();
+                Nintendo obj = new Nintendo(gameID);
+                obj.update(n);
+            }
         }
 
     }

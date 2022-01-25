@@ -24,7 +24,7 @@ public class Mall implements Runnable {
                     if (isAdmin) {
                         Owner obj1;
                         // Admin can add or remove game in store
-                        System.out.print("Do you Want to Add or Remove: ");
+                        System.out.print("Do you Want to Add or Remove or Update: ");
                         String ch = sc.next().toUpperCase();
                         if (ch.equals("ADD")) {
                             // Add item - admin must enter all information of game DVD
@@ -70,7 +70,14 @@ public class Mall implements Runnable {
                             obj1 = new Owner("remove", platform, 21, "title", 4.3, "description", "video", "cover",
                             "image1", "condition", 2.3); // We enter random to skip constructor
                         }
-                    } else {
+                        else if (ch.equals("UPDATE")){
+                            System.out.print("Enter platform P,X,N: ");
+                            char platform=sc.next().toUpperCase().charAt(0);
+                            obj1 = new Owner("update", platform, 21, "title", 4.3, "description", "video", "cover",
+                                    "image1", "condition", 2.3);
+                        }
+                    }
+                    else {
                         System.out.println("Sorry !Wrong Password or User ID\n Try again");
                     }
                     break;
