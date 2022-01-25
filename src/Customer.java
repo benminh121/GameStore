@@ -49,7 +49,7 @@ class Customer {
             System.out.println(e);
         }
         Scanner sc = new Scanner(System.in);
-        System.out.println("Do you want to buy any ? YES/NO");
+        System.out.println("Do you want to buy any ? YES/NO or S (search)");
         String input = sc.next().toUpperCase();
         if (input.equals("YES")) {
             System.out.println("Enter the game id");

@@ -1,5 +1,5 @@
 1,NBA22,1200,Basketball,video1,cover1,image1,available,0.1,4
-2,Apex,200,FPS,video1,cover1,image1,available,0.1,3
+2,Apex,200,FPS,video1,cover1,image1,available,0.1,2 
 3,dsf,435.0,vfd,vfd,vfd,vdf,bg,5.0,1
 4,ef,43.0,ffs,vs,grs,grs,gr,0.1,0
 5,ds,43.0,fs,grs,grs,fsr,frs,0.4,0

@@ -50,7 +50,7 @@ class Owner {
                 Nintendo obj = new Nintendo(gameID);
                 obj.remove(n);
             }
-            sc.close();
+
         }
 
     }
