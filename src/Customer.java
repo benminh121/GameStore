@@ -43,9 +43,7 @@ class Customer {
                 System.out.println("Stock: " + temp.substring(i, temp.indexOf(",")));
                 System.out.println("*************************");
             }
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
         Scanner sc = new Scanner(System.in);
@@ -55,14 +53,11 @@ class Customer {
             System.out.println("Enter the game id");
             int gid = sc.nextInt();
             select(gid, platform);
-        }
-        else if (input.equals("S")){
+        } else if (input.equals("S")) {
             System.out.println("Enter name: ");
             String search_name = sc.next().toLowerCase();
-            search(platform,search_name);
+            search(platform, search_name);
         }
-
-
     }
 
     void search(String platform, String search) {
@@ -84,13 +79,12 @@ class Customer {
                 String id = temp.substring(i, temp.indexOf(","));
                 temp = temp.substring(temp.indexOf(",") + 1);
                 temp = temp.substring(i, temp.indexOf(",")).toLowerCase();
-                if (temp.contains(search)){
+                if (temp.contains(search)) {
                     idArray.add(id);
                 }
             }
-            show(platform,idArray);
-        }
-        catch (IOException e) {
+            show(platform, idArray);
+        } catch (IOException e) {
             System.out.println(e);
         }
     }

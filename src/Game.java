@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-abstract class Game
-{
-    static ArrayList <String> bill =new ArrayList<>();
+
+abstract class Game {
+    static ArrayList<String> bill = new ArrayList<>();
     private int gameID;
     private String title;
     private double price;
@@ -13,8 +13,8 @@ abstract class Game
     private String condition;
     private double discount;
     private int stock;
-    Game()
-    {
+
+    Game() {
         gameID = 0;
         title = null;
         price = 0;
@@ -26,8 +26,9 @@ abstract class Game
         condition = null;
         discount = 0;
     }
-    Game(int gameID, String title, double price, String description, String video, 
-    String cover, String image1, String condition, double discount){
+
+    Game(int gameID, String title, double price, String description, String video,
+         String cover, String image1, String condition, double discount) {
         this.setGameID(gameID);
         this.setTitle(title);
         this.setPrice(price);
@@ -38,63 +39,62 @@ abstract class Game
         this.setCondition(condition);
         this.setDiscountG(discount);
     }
-    Game(int gameID){
+
+    Game(int gameID) {
         setGameID(gameID);
     }
 
-       // Set and get methods
-    public void setGameID(int gameID){
+    // Set and get methods
+    public void setGameID(int gameID) {
         this.gameID = gameID;
     }
-    
-    public int getGameID(){
+
+    public int getGameID() {
         return gameID;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
-    
-    public String getTitle(){
+
+    public String getTitle() {
         return title;
     }
-    
+
     public void setPrice(double price) {
         this.price = price;
-    } 
-    
+    }
+
     public double getPrice() {
         return price;
     }
-    
+
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     public String getDescription() {
         return description;
     }
-    
+
     public void setVideo(String video) {
         this.video = video;
     }
-    
-    public String getVideo(){
-        return video;
-    }
+
+    public String getVideo() { return video; }
 
     public void setCover(String cover) {
         this.cover = cover;
     }
-    
+
     public String getCover() {
         return cover;
     }
-    
+
     public void setImage1(String image1) {
         this.image1 = image1;
     }
-    
+
     public String getImage1() {
         return image1;
     }
@@ -109,8 +109,8 @@ abstract class Game
 
     public void setDiscountG(double discount) {
         this.discount = discount;
-    } 
-    
+    }
+
     public double getDiscountG() {
         return discount;
     }
@@ -123,6 +123,7 @@ abstract class Game
         return stock;
     }
 
-    abstract void add( );
-    abstract boolean searchInStock(int n,String purpose );
+    abstract void add();
+
+    abstract boolean searchInStock(int n, String purpose);
 }

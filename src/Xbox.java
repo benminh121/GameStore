@@ -8,16 +8,17 @@ class Xbox extends Game {
     }
 
     Xbox(int gameID, String title, double price, String description, String video,
-            String cover, String image1, String condition, double discount) {
+         String cover, String image1, String condition, double discount) {
         super(gameID, title, price, description, video, cover, image1, condition, discount);
         platform = 'X';
 
     }
 
-    Xbox(int gameID){
+    Xbox(int gameID) {
         super();
     }
-    void update(int n){
+
+    void update(int n) {
         File inputFile = new File("PSs.txt");
         File tempFile = new File("myTempFile.txt");
         boolean find = searchInStock(n, "update");
@@ -25,6 +26,7 @@ class Xbox extends Game {
             System.out.println("Not Available!!");
         }
     }
+
     void add() {
 
         File f = new File("Xboxs.txt");

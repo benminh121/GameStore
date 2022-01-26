@@ -62,22 +62,20 @@ public class Mall implements Runnable {
                             double discount = sc.nextDouble();
                             // Constructor add game in Owner class
                             obj1 = new Owner("add", platform, gameID, title, price, description, video, cover,
-                                                image1, condition, discount);
-                        // Constructor remove game
+                                    image1, condition, discount);
+                            // Constructor remove game
                         } else if (ch.equals("REMOVE")) {
                             System.out.print("Enter platform P,X,N: ");
-                            char platform=sc.next().toUpperCase().charAt(0);
+                            char platform = sc.next().toUpperCase().charAt(0);
                             obj1 = new Owner("remove", platform, 21, "title", 4.3, "description", "video", "cover",
-                            "image1", "condition", 2.3); // We enter random to skip constructor
-                        }
-                        else if (ch.equals("UPDATE")){
+                                    "image1", "condition", 2.3); // We enter random to skip constructor
+                        } else if (ch.equals("UPDATE")) {
                             System.out.print("Enter platform P,X,N: ");
-                            char platform=sc.next().toUpperCase().charAt(0);
+                            char platform = sc.next().toUpperCase().charAt(0);
                             obj1 = new Owner("update", platform, 21, "title", 4.3, "description", "video", "cover",
                                     "image1", "condition", 2.3);
                         }
-                    }
-                    else {
+                    } else {
                         System.out.println("Sorry !Wrong Password or User ID\n Try again");
                     }
                     break;
@@ -103,8 +101,6 @@ public class Mall implements Runnable {
         System.out.print("Enter id: ");
         String id = sc.next();
         try {
-            /*File inputFile = new File("admin.csv");
-            Scanner reader = new Scanner(inputFile);*/
             BufferedReader br = new BufferedReader(new FileReader("admin.csv"));
             String line = "";
             String username = null;
@@ -114,7 +110,7 @@ public class Mall implements Runnable {
                 String[] record = line.split(",");    // use comma as separator
                 username = record[0];
                 passwd = record[1];
-                if (id.equals(username)){
+                if (id.equals(username)) {
                     return new Mall().password(passwd);
                 }
             }
@@ -128,28 +124,12 @@ public class Mall implements Runnable {
 
     }
 
-    /*public boolean password(String pass) {
-        Console console = System.console();
-        if (console == null) {
-            System.out.println("Couldn't get Console instance");
-            System.exit(0);
-        }
-
-        console.printf("Testing password%n");
-        char[] passwordArray = console.readPassword("Enter your secret password: ");
-        String toch = new String(passwordArray);
-        if (toch.equals(pass))
-            return true;
-        else
-            return false;
-    }*/
-    // Because IDE run console always null, we cannot run with console.readPassword
-    public boolean password(String pass){
+    public boolean password(String pass) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Password: ");
         String passwordA = scanner.nextLine();
         return passwordA.equals(pass);
     }
 
-    }
+}
 

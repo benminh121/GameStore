@@ -8,13 +8,13 @@ class PS extends Game {
     }
 
     PS(int gameID, String title, double price, String description, String video,
-            String cover, String image1, String condition, double discount) {
+       String cover, String image1, String condition, double discount) {
         super(gameID, title, price, description, video, cover, image1, condition, discount);
         platform = 'P';
 
     }
 
-    PS(int gameID){
+    PS(int gameID) {
         super(gameID);
     }
 
@@ -38,7 +38,8 @@ class PS extends Game {
         }
 
     }
-    void update(int n){
+
+    void update(int n) {
         File inputFile = new File("PSs.txt");
         File tempFile = new File("myTempFile.txt");
         boolean find = searchInStock(n, "update");
